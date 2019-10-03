@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout.html">
+<div layout:fragment="content">
+    <div class="store" th:if="${isStoreEnabled}">
+        <div class="bg-near-white ph3 pv1">
+            <p class="sans-serif lh-copy measure"> <h1 class="f1">E-Commerce Shopping Cart</h1></p>
+        </div>
+        <div class="pv4">
+            <form th:action="@{/submit}" th:object="${product}" method="post">            
+	           Choose Product:<select name="productName">
+				  <option value="iPhone">iPhone</option>
+				  <option value="Samsung">Samsung</option>
+				  <option value="Oppo">Oppo</option>
+				  <option value="Sony">Sony</option>
+				</select>&nbsp;
+                Enter the required Quantity:<input type="number" name="quantity" id="quantity" min="0" required /> &nbsp;  
+                <button class="f4 link br1 ba bw2 ph3 pv2 mb2 dib near-black b--near-black b hover-bg-near-black hover-white" >Checkout</button>
+            </form>           
+        </div>
+    </div>
+</div>
+</html>

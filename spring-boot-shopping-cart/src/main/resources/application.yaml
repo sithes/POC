@@ -1,0 +1,13 @@
+server:
+  address: 0.0.0.0
+activemq:
+  brokerUrl: ${ACTIVEMQ_BROKER_URL:vm://embedded?broker.persistent=false&broker.useShutdownHook=false}
+queue:
+  name: ${QUEUE_NAME:productCartQueue}
+worker:
+  name: ${HOSTNAME:productWorker}
+  enabled: ${WORKER_ENABLED:true}
+store:
+  enabled: ${STORE_ENABLED:true}
+pool:
+  reconnect-on-exception: false
